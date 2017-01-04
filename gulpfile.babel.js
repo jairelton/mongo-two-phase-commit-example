@@ -5,18 +5,18 @@ import clean from 'gulp-clean';
 
 const paths = {
   SRC: 'src/**/*.js',
-  DIST: 'dist'
+  BUILD: 'build'
 };
 
 gulp.task('clean', () => {
-  gulp.src(paths.DIST)
+  gulp.src(paths.BUILD)
     .pipe(clean());
 });
 
 gulp.task('build', () => {
   gulp.src(paths.SRC)
     .pipe(babel())
-    .pipe(gulp.dest(paths.DIST));
+    .pipe(gulp.dest(paths.BUILD));
 });
 
 gulp.task('watch', () => {
